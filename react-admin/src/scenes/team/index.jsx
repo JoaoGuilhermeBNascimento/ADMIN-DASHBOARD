@@ -71,7 +71,7 @@ export default function Team() {
 
   return (
     <Box m='20px'>
-      <Header title='TEAM' subtitle='Managing the Team Members' />
+      <Header title='Pessoal' subtitle='Gestão de Pessoas' />
       <Box
         m='40px 0 0 0 '
         height='75vh'
