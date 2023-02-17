@@ -6,7 +6,6 @@ import AdminPanelSettingsOutlinedIcon from '@mui/icons-material/AdminPanelSettin
 import LockOpenOutlinedicon from '@mui/icons-material/LockOpenOutlined';
 import SecurityOutlinedIcon from '@mui/icons-material/SecurityOutlined';
 import Header from '../../components/Header';
-import { palette } from '@mui/system';
 
 export default function Team() {
   const theme = useTheme();
@@ -38,10 +37,10 @@ export default function Team() {
       flex: 1,
     },
     {
-      field: 'acess',
+      field: 'acessLevel',
       headerName: 'Acess Level',
       flex: 1,
-      renderCell: ({ row: { acess } }) => {
+      renderCell: ({ row: { access } }) => {
         return (
           <Box
             width='60%'
@@ -50,17 +49,19 @@ export default function Team() {
             display='flex'
             justifyContent='center'
             backgroundColor={
-              acess === 'admin'
+              access === 'admin'
                 ? colors.greenAccent[600]
+                : access === 'manager'
+                ? colors.greenAccent[700]
                 : colors.greenAccent[700]
             }
             borderRadius='4px'
           >
-            {acess === 'admin' && <AdminPanelSettingsOutlinedIcon />}
-            {acess === 'manager' && <SecurityOutlinedIcon />}
-            {acess === 'user' && <LockOpenOutlinedicon />}
+            {access === 'admin' && <AdminPanelSettingsOutlinedIcon />}
+            {access === 'manager' && <SecurityOutlinedIcon />}
+            {access === 'user' && <LockOpenOutlinedicon />}
             <Typography color={colors.grey[100]} sx={{ ml: '5px' }}>
-              {acess}
+              {access}
             </Typography>
           </Box>
         );
@@ -69,12 +70,36 @@ export default function Team() {
   ];
 
   return (
-    <Box m='20px' >
+    <Box m='20px'>
       <Header title='TEAM' subtitle='Managing the Team Members' />
-      <Box 
+      <Box
         m='40px 0 0 0 '
         height='75vh'
-        
+        sx={{
+          '& .MuiDataGrid-root': {
+            border: 'none',
+          },
+          '& .MuiDataGrid-cell': {
+            borderBottom: 'none',
+          },
+          '& .name-column--cell': {
+            color: colors.greenAccent[300],
+          },
+          '& .MuiDataGrid-columnHeaders': {
+            backgroundColor: colors.blueAccent[700],
+            borderBottom: 'none',
+          },
+          '& .MuiDataGrid-virtualScroller': {
+            backgroundColor: colors.primary[500],
+          },
+          '& .MuiDataGrid-footerContainer': {
+            borderTop: 'none',
+            backgroundColor: colors.blueAccent[700],
+          },
+          '& .MuiCheckbox-root': {
+            color: `${colors.greenAccent[200]} !important`,
+          },
+        }}
       >
         <DataGrid rows={mockDataTeam} columns={columns} />
       </Box>
