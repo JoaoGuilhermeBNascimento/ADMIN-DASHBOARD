@@ -32,7 +32,7 @@ export default function Calendar() {
         title,
         start: selected.startStr,
         end: selected.endStr,
-        allday: selected.allday,
+        allday: selected.allDay,
       });
     }
   };
@@ -74,14 +74,11 @@ export default function Calendar() {
                   primary={event.title}
                   secondary={
                     <Typography>
-                      {
-                        (formatDate(event.start),
-                        {
-                          year: 'numeric',
-                          month: 'short',
-                          day: 'numeric',
-                        })
-                      }
+                      {formatDate(event.start, {
+                        day: 'numeric',
+                        month: 'short',
+                        year: 'numeric',
+                      })}
                     </Typography>
                   }
                 />
@@ -100,9 +97,9 @@ export default function Calendar() {
               interactionPlugin,
             ]}
             headerToolbar={{
-              left: 'prev, next today',
+              left: 'prev,next today',
               center: 'title',
-              right: 'dayGridMonth, timeGridWeek, timeGridDay, listMonth',
+              right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth',
             }}
             initialView='dayGridMonth'
             editable={true}
@@ -113,8 +110,8 @@ export default function Calendar() {
             eventClick={handleEventClick}
             eventsSet={(events) => setCurrentEvents(events)}
             initialEvents={[
-              { id: '1234', title: 'All-Day event', date: '20-02-2023' },
-              { id: '4124', title: 'Timed event', date: '21-02-2023' },
+              { id: '1234', title: 'All-Day event', date: '2023-02-21' },
+              { id: '4124', title: 'Timed event', date: '2023-02-23' },
             ]}
           ></FullCalendar>
         </Box>
