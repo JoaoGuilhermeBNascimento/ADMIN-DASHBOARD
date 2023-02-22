@@ -1,9 +1,9 @@
+import { useTheme } from '@mui/material';
 import { ResponsiveChoropleth } from '@nivo/geo';
-import { tokens } from '../../theme';
 import { geoFeatures } from '../../data/mockGeoFeatures';
+import { tokens } from '../../theme';
 
 import { mockGeographyData as data } from '../../data/mockData';
-import { useTheme } from '@mui/material';
 
 export default function GeopraphyChart({ isDashboard = false }) {
   const theme = useTheme();
@@ -46,7 +46,7 @@ export default function GeopraphyChart({ isDashboard = false }) {
       label='properties.name'
       valueFormat='.2s'
       projetctionScale={isDashboard ? 40 : 150}
-      projectionTranslation={isDashboard ? [0.49, 0.6] : [(0.5, 0.5)]}
+      projectionTranslation={isDashboard ? [0.49, 0.6] : [0.5, 0.5]}
       projectionRotation={[0, 0, 0]}
       borderWidth={1.5}
       borderColor='##f5f5f5'
@@ -64,14 +64,14 @@ export default function GeopraphyChart({ isDashboard = false }) {
                 itemWidth: 94,
                 itemHeight: 18,
                 itemDirection: 'left-to-right',
-                itemTextColor: '#444444',
+                itemTextColor: colors.grey[100],
                 itemOpacity: 0.85,
                 symbolSize: 18,
                 effects: [
                   {
                     on: 'hover',
                     style: {
-                      itemTextColor: '#000000',
+                      itemTextColor: '#ffffff',
                       itemOpacity: 1,
                     },
                   },
