@@ -5,7 +5,7 @@ import { tokens } from '../../theme';
 
 import { mockGeographyData as data } from '../../data/mockData';
 
-export default function GeopraphyChart({ isDashboard = false }) {
+export default function GeographyChart({ isDashboard = false }) {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   return (

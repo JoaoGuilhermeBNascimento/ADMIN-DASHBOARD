@@ -1,6 +1,6 @@
 import { Box, useTheme } from '@mui/material';
 import Header from '../../components/Header';
-import GeopraphyChart from '../../components/GeopraphyChart';
+import GeographyChart from '../../components/GeographyChart';
 import { tokens } from '../../theme';
 
 export default function Geography() {
@@ -9,8 +9,12 @@ export default function Geography() {
   return (
     <Box mb='20px'>
       <Header title='Map' subtitle='' />
-      <Box height='75vh' border={`1px solid ${colors.grey[100]}`} borderRadius='4px'>
-        <GeopraphyChart />
+      <Box
+        height='75vh'
+        border={`1px solid ${colors.grey[100]}`}
+        borderRadius='4px'
+      >
+        <GeographyChart />
       </Box>
     </Box>
   );
