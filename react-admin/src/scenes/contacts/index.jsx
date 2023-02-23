@@ -62,7 +62,7 @@ export default function Contacts() {
             borderBottom: 'none',
           },
           '& .MuiDataGrid-virtualScroller': {
-            backgroundColor: colors.primary[500],
+            backgroundColor: colors.primary[400],
           },
           '& .MuiDataGrid-footerContainer': {
             borderTop: 'none',
@@ -76,7 +76,11 @@ export default function Contacts() {
           },
         }}
       >
-        <DataGrid rows={mockDataContacts} columns={columns} components={{Toolbar: GridToolbar}}/>
+        <DataGrid
+          rows={mockDataContacts}
+          columns={columns}
+          components={{ Toolbar: GridToolbar }}
+        />
       </Box>
     </Box>
   );

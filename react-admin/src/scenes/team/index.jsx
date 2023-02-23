@@ -10,7 +10,6 @@ import Header from '../../components/Header';
 export default function Team() {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-
   const columns = [
     { field: 'id', headerName: 'ID' },
     {
@@ -21,7 +20,7 @@ export default function Team() {
     },
     {
       field: 'age',
-      headerName: 'age',
+      headerName: 'Age',
       type: 'number',
       headerAlign: 'left',
       align: 'left',
@@ -33,12 +32,12 @@ export default function Team() {
     },
     {
       field: 'email',
-      headerName: 'E-mail',
+      headerName: 'Email',
       flex: 1,
     },
     {
-      field: 'acessLevel',
-      headerName: 'Acess Level',
+      field: 'accessLevel',
+      headerName: 'Access Level',
       flex: 1,
       renderCell: ({ row: { access } }) => {
         return (
@@ -71,9 +70,9 @@ export default function Team() {
 
   return (
     <Box m='20px'>
-      <Header title='Pessoal' subtitle='Gestão de Pessoas' />
+      <Header title='TEAM' subtitle='Managing the Team Members' />
       <Box
-        m='40px 0 0 0 '
+        m='40px 0 0 0'
         height='75vh'
         sx={{
           '& .MuiDataGrid-root': {
@@ -90,7 +89,7 @@ export default function Team() {
             borderBottom: 'none',
           },
           '& .MuiDataGrid-virtualScroller': {
-            backgroundColor: colors.primary[500],
+            backgroundColor: colors.primary[400],
           },
           '& .MuiDataGrid-footerContainer': {
             borderTop: 'none',
@@ -101,7 +100,7 @@ export default function Team() {
           },
         }}
       >
-        <DataGrid rows={mockDataTeam} columns={columns} />
+        <DataGrid checkboxSelection rows={mockDataTeam} columns={columns} />
       </Box>
     </Box>
   );
